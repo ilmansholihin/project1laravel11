@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -75,7 +76,7 @@ class AuthController extends Controller
         ]);
 
         if ($user){
-            Alert::succes('Berhasil', 'Akun baru berhasi dibuat, silahkan melakukan login!');
+            Alert::success('Berhasil', 'Akun baru berhasi dibuat, silahkan melakukan login!');
             return redirect('/');
         } else {
             Alert::error('Gagal', 'Akun gagal dibuat, silahkancoba lagi!');
