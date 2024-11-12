@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="shortcut icon" href="{{ assets('assets/templates/user/img/fav.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/templates/user/img/fav.png') }}">
 
     <meta name="author" content="CodePixar">
 
@@ -15,13 +15,13 @@
 
     <title>Merch Store</title>
 
-    @include('layout.user.style')
+    @include('layouts.user.style')
 </head>
 <body>
     @include('sweetalert::alert')
-    @include('layout.user.navbar')
+    @include('layouts.user.navbar')
     @yield('content')
-    @include('layout.user.footer')
-    @include('layout.user.script')
+    @include('layouts.user.footer')
+    @include('layouts.user.script')
 </body>
 </html>

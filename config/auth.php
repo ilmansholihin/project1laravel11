@@ -40,7 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin' => [           // Tambahkan ini
+            'driver' => 'session',
+            'provider' => 'admins',  // Sesuaikan dengan provider yang Anda gunakan
+        ],
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -63,6 +70,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+
+        'admins' => [          // Jika menggunakan provider terpisah
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Admin::class),
         ],
 
         // 'users' => [
