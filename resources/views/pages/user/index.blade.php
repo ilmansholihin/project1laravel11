@@ -44,27 +44,45 @@
                 </div>
             </div>
         </div>
+
+
         <div class="row">
             <!-- single product -->
-            <div class="col-lg-3 col-md-6">
-                <div class="single-product">
-                    <img class="img-fluid" src="{{ asset('assets/templates/user/img/product/p1.jpg') }}" alt="">
-                    <div class="product-details">
-                        <h6>addidas New Hammer sole for Sports person</h6>
-                        <div class="price">
-                            <h6>$150.00</h6>
-                            <h6 class="l-through">$210.00</h6>
-                        </div>
-                        <div class="prd-bottom">
-                            <a href="" class="social-info">
-                                <span class="ti-bag"></span>
-                                <p class="hover-text">add to bag</p>
-                            </a>
+            @forelse ($products as $item)
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-product">
+                        <img class="img-fluid" src="{{ asset('images/', $item->images) }}" alt="">
+                        <div class="product-details">
+                            <h6></h6>
+                            <div class="price">
+                                <h6>{{ $item->price }}</h6>
+                            </div>
+                            <div class="prd-bottom">
+                                <a href="#" class="social-info">
+                                    <span class="ti-bag"></span>
+                                    <p class="hover-text">Beli</p>
+                                </a>
+                                <a href="#" class="social-info">
+                                    <span class="lnr lnr-move"></span>
+                                    <p class="hover-text">Detail</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @empty
+                <div class="col-lg-12 col-md-12">
+                    <div class="single-product">
+                        <h3 class="text-center">Tidak ada produk</h3>
+                    </div>
+                </div>
+            @endforelse
         </div>
+
+
+
+
+        
     </div>
 </section>
 <!-- end product Area -->
