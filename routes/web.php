@@ -32,7 +32,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     // produc Route
-    Route::get('/product',[ProductController::class, 'dashboard'])->name('admin.product');
+    // index sebelumnya adalah dashboard
+    Route::get('/product',[ProductController::class, 'index'])->name('admin.product');
 
     // Route::get('/admin', function () {
     //     return view('pages.admin.index');

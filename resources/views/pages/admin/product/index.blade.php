@@ -21,7 +21,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered table-md">
                     <tr>
-                        <th>#</th>
+                        <th>No</th>
                         <th>Nama Produk</th>
                         <th>Harga Produk</th>
                         <th>Stok</th>
@@ -30,7 +30,7 @@
                     @php
                         $no = 0
                     @endphp
-                    @forelse ($products as $item)
+                    @forelse ($product as $item)
                         <tr>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->price }} Points</td>
