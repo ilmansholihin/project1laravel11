@@ -8,13 +8,15 @@ use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Product;
+use Illuminate\Support\Facades\File;
 
 class AuthController extends Controller
 {
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required|min:8|max:15',
         ]);
 
@@ -58,7 +60,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required|min:8|max:8',
         ]);
 
@@ -83,6 +85,9 @@ class AuthController extends Controller
             return redirect()->back();
         }
     }
+
+    
+
 
 
 }
